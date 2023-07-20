@@ -5,7 +5,9 @@ import os
 import csv
 
 # Determine file path and store in new variable for CSV file
-with open(os.path.join(r"C:\Users\matth\OneDrive\Desktop\python-challenge\Resources\budget_data.csv")) as csvfile:
+csvpath = os.path.join('PyBank', 'Resources','budget_data.csv')
+
+with open(csvpath) as csvfile:
     budget_data = csv.reader(csvfile)
 
     next(budget_data)
@@ -54,6 +56,6 @@ Greatest Decrease in Profits: {dec[0]} (${dec[1]:,})
 print(output)
 
 #Designate the file path to write to
-with open(r"C:\Users\matth\OneDrive\Desktop\python-challenge\Analysis\pybank_output.txt", "w", encoding='utf-8') as output_file :
+with open("PyBank\Analysis\pybank_output.txt", "w") as output_file :
 
     output_file.write(output)
